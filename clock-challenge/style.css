@@ -1,0 +1,38 @@
+:root {
+  --color-bg: #222222;
+  --color-inactive: #434242;
+  --color-active: #F3EFE0;
+  --color-highlight: #22A39F;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 5vmin;
+  letter-spacing: 10px;
+  background-color: var(--color-bg);
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+div.face {
+  color: var(--color-inactive);
+  padding: .5em;
+  border: 5px solid var(--color-inactive);
+}
+
+div.row > * {
+  transition: color .5s ease;
+}
+
+.active {
+  color: var(--color-active);
+}
+
+.highlight {
+  color: var(--color-highlight);
+}

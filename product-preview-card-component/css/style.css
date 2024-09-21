@@ -1,0 +1,113 @@
+:root {
+  --clr-primary-dark: hsl(158, 36%, 37%);
+  --clr-primary-darker: hsl(158, 36%, 20%);
+  --clr-primary-light: hsl(30, 38%, 92%);
+  --clr-neutral-darker: hsl(212, 21%, 14%);
+  --clr-neutral-dark: hsl(228, 12%, 48%);
+  --clr-neutral-lightest: hsl(0, 0%, 100%);
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: 'Fraunces', serif;
+  --fw-normal: 500;
+  --fw-bold: 700;
+}
+
+body {
+  background-color: var(--clr-primary-light);
+}
+
+main {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.product {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-normal);
+  color: var(--clr-neutral-dark);
+  background-color: var(--clr-neutral-lightest);
+  margin: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto auto;
+  max-width: 600px;
+}
+
+.product__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.product__title {
+  font-family: var(--ff-secondary);
+  line-height: 1;
+  font-size: 2.125rrem;
+  color: var(--clr-neutral-darker);
+}
+
+.product__category {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+}
+
+.product__description {
+  font-size: 0.9rem;
+}
+
+.prices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price--new {
+  font-family: var(--ff-secondary);
+  font-size: 2.125rrem;
+  color: var(--clr-primary-dark);
+}
+
+.price--old {
+  font-size: 0.9rem;
+  text-decoration: line-through 1px;
+}
+
+.product__button {
+  display: block;
+  width: 100%;
+  background-color: var(--clr-primary-dark);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--clr-neutral-lightest);
+  font-size: 0.9rem;
+  font-weight: var(--fw-bold);
+}
+
+.product__button:hover {
+  cursor: pointer;
+  background-color: var(--clr-primary-darker);
+}
+
+.product__button::before {
+  content: url('../images/icon-cart.svg');
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}
+
+@media (min-width: 430px) {
+  .product {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product__details {
+    padding: 2rem;
+  }
+}
